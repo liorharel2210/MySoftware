@@ -4,7 +4,7 @@ pipeline {
 
     stages {
         stage('Hello') {
-            step([$class: 'GitHubCommitStatusSetter', statusResultSource: [$class: 'ConditionalStatusResultSource', results: []]])
+            step([$class: 'GitHubCommitStatusSetter', reposSource: [$class: 'ManuallyEnteredRepositorySource', url: 'https://github.com/liorharel2210/MySoftware.git'], statusResultSource: [$class: 'ConditionalStatusResultSource', results: []]])
             }
         }
     }
